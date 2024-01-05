@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Example</title>
+</head>
+<style>
+    body{
+        background-color:black;
+        color:yellow;
+
+    }
+    #butt{
+        position: absolute;
+        right: 20px; 
+        top: 20px;
+         
+        }
+</style>
+<body>
+    <div id="content">
+        <h1>Hi this is just a test to  read the whole content of the website</h1>
+
+        <p>We are here to help u under all circumstances</p>
+
+        <p>Because i am batman</p>
+    </div>
+
+    <div id="butt">
+    <button onclick="readAloud()">Happy to help</button>
+    </div>
+
+    <script>
+        function readAloud() {
+            // Get the entire text content of the webpage
+            var contentToRead = document.getElementById('content').innerText;
+
+            // Create a new SpeechSynthesisUtterance instance
+            var utterance = new SpeechSynthesisUtterance(contentToRead);
+
+            // Use the default voice
+            utterance.voice = speechSynthesis.getVoices()[0];
+
+            // Speak the text
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
