@@ -1,0 +1,5 @@
+{
+  "kernel": "simd",
+  "matrix_size": 512,
+  "threads": 4
+}
